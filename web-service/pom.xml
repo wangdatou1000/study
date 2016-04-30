@@ -13,7 +13,12 @@
 		<dependency>
 			<groupId>datou</groupId>
 			<artifactId>DataStructAndAlgorithm</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+	   <groupId>datou</groupId>
+	   <artifactId>web-dal</artifactId>
+	   <version>${project.version}</version>
+	   </dependency>
 	</dependencies>
 </project>

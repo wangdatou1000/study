@@ -9,7 +9,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
   <artifactId>web-dal</artifactId>
-  <build>
+<!--   <build>
   <plugins>
   <plugin>
     <groupId>org.mybatis.generator</groupId>
@@ -29,5 +29,5 @@
     </dependencies>
 </plugin>
 </plugins>
-  </build>
+  </build> -->
 </project>

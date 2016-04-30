@@ -12,9 +12,7 @@
 	<packaging>war</packaging>
 	<name>web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	<properties>
-	<project-version>0.0.1-SNAPSHOT</project-version>
-	</properties>
+
 	<dependencies>
 	   <dependency>
 	   <groupId>datou</groupId>
