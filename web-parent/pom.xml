@@ -8,18 +8,20 @@
 	<properties>
 		<spring.version>4.2.5.RELEASE</spring.version>
 		<project.version>0.0.1-SNAPSHOT</project.version>
+		<junit.version>4.12</junit.version>
 	</properties>
 	<dependencies>
-	    <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-core</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>
-        <dependency>  
-            <groupId>org.springframework</groupId>  
-            <artifactId>spring-oxm</artifactId>  
-            <version>${spring.version}</version>  
-        </dependency>   
+		<!-- spring框架依赖包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -35,10 +37,20 @@
 			<artifactId>spring-aop</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- junit测试spring集成 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 
@@ -86,18 +98,14 @@
 			<version> 1.0.16</version>
 		</dependency>
 
-
+		<!-- jnunit4 测试包 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>4.2.5.RELEASE</version>
-		</dependency>
+
 		<!-- bean 自动生成getter、setter -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -142,28 +150,19 @@
 			<version> 1.10</version>
 		</dependency>
 
-
 		<dependency>
-
 			<groupId> commons-dbcp </groupId>
-
 			<artifactId> commons-dbcp </artifactId>
-
 			<version> 1.4</version>
-
 		</dependency>
-
 		<dependency>
-
 			<groupId> org.apache.commons</groupId>
-
 			<artifactId> commons-dbcp2</artifactId>
-
 			<version> 2.1.1</version>
-
 		</dependency>
 
 	</dependencies>
+	
 	<build>
 		<finalName>web</finalName>
 		<plugins>

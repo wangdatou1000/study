@@ -39,4 +39,17 @@ public class HelloController {
 			return "has found the user for name =" + user.getUserName();
 	}
 	
+	@RequestMapping(value = "/saveUser", method = { RequestMethod.POST })
+	@ResponseBody
+	public String saveUser(@RequestBody RequestMode bo) {
+		int nowTime = (int) (System.currentTimeMillis() / 1000);
+		User user = new User();
+		user.setUserName(bo.getUsername());
+		user.setTel("18913002600");
+		user.setCreateTime(Integer.valueOf(nowTime));
+		user.setUpdateTime(Integer.valueOf(nowTime));
+		int count = myDaoService.insertUser(user);
+		return "has saved,count=" + count;
+	}
+
 }

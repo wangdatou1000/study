@@ -19,4 +19,16 @@ public class MyDaoServiceImpl implements MyDaoService {
 		return userMapper.selectByPrimaryKey(Integer.valueOf(id));
 	}
 
+	@Override
+	public int insertUser(User user) {
+		if (user.getUserName() == null)
+			return 100;
+		userMapper.insertSelective(user);
+		user = userMapper.selectByPrimaryKey(1);
+		user.setUpdateTime(Integer.valueOf((int) (System.currentTimeMillis() / 1000)));
+		int updateCount = userMapper.updateByPrimaryKeySelective(user);
+		double test = updateCount / user.getCreateTime();
+		return updateCount;
+	}
+
 }
