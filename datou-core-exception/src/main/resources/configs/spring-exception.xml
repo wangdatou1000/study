@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+     http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+    >  
+    <!-- 服务错误码异常处理 -->
+	<bean class="datou.core.exception.MyExceptionHandler" />  
+	
+	 <!-- 错误码 -->
+    <bean id="ErrorMap" class="org.springframework.beans.factory.config.YamlMapFactoryBean">
+        <property name="resources">
+            <list>
+                <value>classpath:error-info.yml</value>
+            </list>
+        </property>
+    </bean>
+	  <bean id="configLoader" class="datou.core.exception.ConfigLoader" init-method="init">
+       <property name="myErrorMap" ref="ErrorMap"/>
+   </bean>
+	
+</beans> 

@@ -16,9 +16,19 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-	   <groupId>datou</groupId>
-	   <artifactId>web-dal</artifactId>
-	   <version>${project.version}</version>
-	   </dependency>
+			<groupId>datou</groupId>
+			<artifactId>web-dal</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>datou</groupId>
+			<artifactId>core-exception</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+			<dependency>
+			<groupId>datou</groupId>
+			<artifactId>core-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 </project>

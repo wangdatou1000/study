@@ -9,6 +9,10 @@
 		<spring.version>4.2.5.RELEASE</spring.version>
 		<project.version>0.0.1-SNAPSHOT</project.version>
 		<junit.version>4.12</junit.version>
+		<!-- log4j日志文件管理包版本 -->
+		<slf4j.version> 1.7.21</slf4j.version>
+		<logback.version> 1.1.7</logback.version>
+
 	</properties>
 	<dependencies>
 		<!-- spring框架依赖包 -->
@@ -16,6 +20,13 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<!--排除commons-logging依赖 -->
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -37,6 +48,12 @@
 			<artifactId>spring-aop</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!-- AOP所需要的包 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
@@ -54,11 +71,45 @@
 			<version>${spring.version}</version>
 		</dependency>
 
+		<!-- 读取yml -->
+		<dependency>
+			<groupId> org.yaml</groupId>
+			<artifactId> snakeyaml</artifactId>
+			<version> 1.17</version>
+		</dependency>
+		<!-- 日志文件管理包 -->
+		<!-- 格式化对象，方便输出日志 -->
+		<dependency>
+			<groupId> org.slf4j</groupId>
+			<artifactId> slf4j-api </artifactId>
+			<version> ${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId> org.slf4j</groupId>
+			<artifactId> jcl-over-slf4j </artifactId>
+			<version> ${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId> ch.qos.logback</groupId>
+			<artifactId> logback-classic </artifactId>
+			<version> ${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-access</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.0-b01</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.11</version>
 		</dependency>
 
 		<!--post 的json请求转换为对象 -->
@@ -162,7 +213,7 @@
 		</dependency>
 
 	</dependencies>
-	
+
 	<build>
 		<finalName>web</finalName>
 		<plugins>

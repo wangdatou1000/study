@@ -59,7 +59,7 @@
         @TODO:是否可以扩展
      -->
     <jdbcConnection driverClass="com.mysql.jdbc.Driver" 
-       connectionURL="jdbc:mysql://127.0.0.1:3306/study_spring?useSSL=false" 
+       connectionURL="jdbc:mysql://127.0.0.1:3306/users?useSSL=false" 
        userId="root" password="2837298">
         <!-- 这里面可以设置property属性，每一个property属性都设置到配置的Driver上 -->
     </jdbcConnection>
@@ -179,7 +179,7 @@
 
         注意，table里面很多参数都是对javaModelGenerator，context等元素的默认属性的一个复写；
      -->
-    <table tableName="user"  enableCountByExample="false" 
+    <table tableName="user_info"  enableCountByExample="false" 
 		    enableUpdateByExample="false" enableDeleteByExample="false" 
 		    enableSelectByExample="false" selectByExampleQueryId="false">
 

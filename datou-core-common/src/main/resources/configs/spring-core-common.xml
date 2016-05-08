@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                        http://www.springframework.org/schema/aop
+                        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+<!--service接口调用拦截器-->
+    <bean id="serviceMethodInterceptor" class="com.datou.core.common.monitor.interceptor.MethodProfileInterceptor">
+    </bean>
+    <aop:config>
+        <aop:pointcut id="serviceMethodPoint"
+                      expression="(execution(* com.datou.*.service.*.*(..)))"/>
+        <aop:advisor pointcut-ref="serviceMethodPoint" advice-ref="serviceMethodInterceptor"/>
+    </aop:config>
+    
+ </beans>   
+    
+    

@@ -1,0 +1,6 @@
+200:
+  message: 成功
+500:
+  message: 不接受此平台
+503:
+  message: 登录失败

@@ -33,6 +33,7 @@ public class HelloController {
 	@ResponseBody
 	public String queryUserById(@RequestParam("user_id") int userId) {
 		User user = myDaoService.getUserById(userId);
+
 		if (user == null)
 			return "not find user for id =" + userId;
 		else
